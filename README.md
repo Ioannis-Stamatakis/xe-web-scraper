@@ -1,24 +1,8 @@
-# Xrysh Eukairia Property Scraper 
+# Athens Property Web Scraper 
 
  **A web scraper of xe.gr for obtaining Athens rental property data**
 
----
-
-## ⚠️ Important Disclaimers
-
-**This project is created for educational and learning purposes only.** 
-
--  **Educational Use**: This scraper was built to test my skills on Python programming and web scraping techniques
--  **Not for Commercial Use**: This tool is NOT intended for commercial purposes or selling data from xe.gr
--  **Respect for xe.gr**: We respect xe.gr's business and intellectual property rights
--  **Legal Compliance**: Users should review xe.gr's terms of service and robots.txt before using this tool
--  **Respectful Scraping**: The scraper includes delays between requests to be respectful to xe.gr's servers
-
-**Please use responsibly and ethically!**
-
----
-
-## What This Project Does
+## Project Overview
 
 This project contains a Python web scraper that extracts rental property data from xe.gr, specifically focused on Athens properties. 
 
@@ -39,7 +23,7 @@ This project contains a Python web scraper that extracts rental property data fr
 - **Summary statistics**: Get insights on price ranges, neighborhoods, and averages
 - **Respectful scraping**: Built-in delays and error handling
 
-##  Project Files
+##  Project Structure
 
 - `xe_scraper.py` - Main scraper script with pagination support
 - `requirements.txt` - Python dependencies
@@ -57,7 +41,7 @@ pip install -r requirements.txt
 python xe_scraper.py
 ```
 
-### 3. Choose Your Scope
+### 3. Choose number of pages
 When prompted, you can:
 - Enter a number (e.g., `5` for first 5 pages)
 - Enter `all` to scrape all available pages
@@ -135,37 +119,24 @@ The scraped dataset is ideal for:
 -  **Educational Projects**: Learning web scraping and data science
 -  **Real Estate Research**: Understanding Athens rental market
 
-##  Legal and Ethical Considerations
+## ⚠️ Important Disclaimers
 
-### Compliance Check
-Based on available information about xe.gr:
--  **Publicly Available Data**: We only extract publicly visible property listings
--  **Respectful Scraping**: Includes delays and respects server load
--  **Educational Purpose**: Created for learning, not commercial gain
--  **No Data Resale**: Not intended for selling or redistributing xe.gr's data
+**This project is for educational purposes only.**
 
-### Best Practices Followed
--  **Robots.txt Awareness**: Users should check xe.gr/robots.txt
--  **Rate Limiting**: 2-second delays between requests
--  **Automatic Stopping**: Stops on 403 errors (rate limiting)
--  **Transparent Logging**: All actions are logged
--  **Focused Scope**: Only scrapes rental property data
+- Built to learn Python and web scraping techniques
+- NOT intended for commercial use or data resale
+- Respects xe.gr's servers with 2-second delays between requests
+- Users should review xe.gr's terms of service and robots.txt before use
 
-### Recommendations for Users
-1. **Review Terms**: Check xe.gr's terms of service before use
-2. **Educational Use Only**: Don't use for commercial purposes
-3. **Respect Rate Limits**: Don't modify delay settings
-4. **Cite Sources**: If using data in research, cite xe.gr appropriately
-5. **Be Responsible**: Use the tool ethically and responsibly
+**Please use responsibly and ethically!**
 
-## 🤝 Contributing to Learning
+##  Contributing to Learning
 
 This project welcomes contributions for educational purposes:
 -  Bug fixes and improvements
 -  Data analysis examples
 -  Documentation enhancements
 -  Code optimization
--  Testing improvements
 
 ##  Questions or Concerns?
 
@@ -174,7 +145,5 @@ If xe.gr or any stakeholders have concerns about this educational project, pleas
 - Following ethical web scraping practices
 - Supporting educational use of technology
 - Being responsive to legitimate concerns
-
----
 
 **Remember**: This tool is for learning and education. Always respect website terms of service, be ethical in your data use, and consider the impact of your actions on others. Happy learning! 🎓 
