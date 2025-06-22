@@ -60,17 +60,20 @@ The scraper will automatically:
 
 ### Recent Scraping Results
 Our latest scraping session collected:
-- **612 properties** across 18 pages
-- **97 unique neighborhoods** in Athens
-- **Price range**: €250 - €175,000 per month
-- **Average price**: €1,244 per month
+- **6598 properties** across 195 pages
+- **Price range**: €250 - €670.000 per month 
+- **Average price**: €1,230 per month
+- **Unique neighborhoods**: 249
 - **Diverse property types**: Apartments, houses, buildings, and more
 
+*Some listings have a price for sale instead of rent, that is why we see some huge prices. Clean the dataset acccordingly.*
+
 ### Sample Properties 
-- 42 τ.μ. apartment in Γκύζη for €800/month
-- 74 τ.μ. apartment in Κυψέλη for €1,050/month  
-- 26 τ.μ. apartment in Πεδίον Άρεως for €430/month
-- 150 τ.μ. apartment in Κολωνάκι for €5,500/month
+1. Διαμέρισμα 95 τ.μ. - 1.250 € - Αθήνα (Μακρυγιάννη (Ακρόπολη))
+2. Διαμέρισμα 78 τ.μ. - 830 € - Αθήνα (Κουκάκι)
+3. Διαμέρισμα 95 τ.μ. - 1.000 € - Αθήνα (Παγκράτι)
+4. Διαμέρισμα 34 τ.μ. - 400 € - Αθήνα (Παγκράτι)
+5. Διαμέρισμα 40 τ.μ. - 550 € - Αθήνα (Άνω Κυψέλη)
 
 ##  Data Structure
 
