@@ -4,7 +4,7 @@ import time
 import json
 import re
 from datetime import datetime
-from urllib.parse import urljoin, urlparse, parse_qs
+from urllib.parse import urljoin
 
 class XEScraper:
     def __init__(self):
@@ -276,7 +276,7 @@ def main():
             print(f"{i+1}. {prop['title']} - {prop['price']} - {prop['address']}")
         
         # Print summary statistics
-        print(f"\nSummary:")
+        print("\nSummary:")
         print(f"Total properties: {len(all_properties)}")
         
         # Count unique neighborhoods

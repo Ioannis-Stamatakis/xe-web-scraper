@@ -46,6 +46,9 @@ When prompted, you can:
 - Enter a number (e.g., `5` for first 5 pages)
 - Enter `all` to scrape all available pages
 
+### 4. If you get a 403 error
+- Enter xe.gr manually and pass the check that you are human.
+
 The scraper will automatically:
 -  Fetch property listings from xe.gr
 -  Extract JSON data embedded in each page
@@ -146,4 +149,4 @@ If xe.gr or any stakeholders have concerns about this educational project, pleas
 - Supporting educational use of technology
 - Being responsive to legitimate concerns
 
-**Remember**: This tool is for learning and education. Always respect website terms of service, be ethical in your data use, and consider the impact of your actions on others. Happy learning! 🎓 
+**Remember**: This tool is for learning and education. Always respect website terms of service
