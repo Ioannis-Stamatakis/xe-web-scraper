@@ -179,6 +179,7 @@ class XEScraper:
 
     def scrape_all_pages(self, base_url, max_pages_to_scrape=None):
         """Scrape all pages of property listings"""
+        scrape_start_time = time.time()
         all_properties = []
         page_count = 0
         
@@ -212,7 +213,7 @@ class XEScraper:
         # Generate URLs for all pages
         page_urls = self.generate_page_urls(base_url, pages_to_scrape)
         
-        # Scrape remaining pages (skip first page as we already scraped it)
+        # Scrape remaining pages (skip first page )
         for page_url in page_urls[1:]:
             if max_pages_to_scrape and page_count >= max_pages_to_scrape:
                 break
@@ -235,15 +236,21 @@ class XEScraper:
                 print(f"Failed to fetch page {page_count + 1}")
                 break
         
+        scrape_end_time = time.time()
+        scrape_duration = scrape_end_time - scrape_start_time
+        
         print(f"\nCompleted scraping {page_count} pages")
         print(f"Total properties found: {len(all_properties)}")
-        return all_properties
+        print(f"Scraping time: {scrape_duration:.2f} seconds ({scrape_duration/60:.1f} minutes)")
+        
+        return all_properties, scrape_duration
 
     def save_to_json(self, data, filename):
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
 def main():
+    total_start_time = time.time()
     scraper = XEScraper()
     
     # Working Athens rental properties URL
@@ -261,7 +268,7 @@ def main():
         max_pages_to_scrape = 5
     
     # Scrape all pages
-    all_properties = scraper.scrape_all_pages(base_url, max_pages_to_scrape)
+    all_properties, scrape_duration = scraper.scrape_all_pages(base_url, max_pages_to_scrape)
     
     if all_properties:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -296,7 +303,7 @@ def main():
                     price_num = re.sub(r'[^\d.]', '', price_str.replace('.', '').replace(',', '.'))
                     if price_num:
                         prices.append(float(price_num))
-                except:
+                except (ValueError, TypeError):
                     pass
         
         if prices:
@@ -304,6 +311,22 @@ def main():
             print(f"Average price: €{sum(prices)/len(prices):.0f}")
     else:
         print("No properties were scraped.")
+    
+    # Calculate and display total execution time
+    total_end_time = time.time()
+    total_duration = total_end_time - total_start_time
+    
+    print("\n" + "="*50)
+    print("TIMING SUMMARY")
+    print("="*50)
+    print(f"Total execution time: {total_duration:.2f} seconds ({total_duration/60:.1f} minutes)")
+    if all_properties:
+        print(f"Pure scraping time: {scrape_duration:.2f} seconds ({scrape_duration/60:.1f} minutes)")
+        print(f"Processing/display time: {total_duration - scrape_duration:.2f} seconds")
+        print(f"Average time per property: {scrape_duration/len(all_properties):.3f} seconds")
+        if len(all_properties) > 0:
+            print(f"Properties per minute: {len(all_properties)/(scrape_duration/60):.1f}")
+    print("="*50)
 
 if __name__ == "__main__":
     main() 
